@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-navy-dark: #081826;
+    --color-navy-primary: #0F2537;
+    --color-navy-medium: #173752;
+    --color-gold-primary: #C59B27;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FAFAFC;
+    color: #1E293B;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-serif-prestige {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom Utilities for Academic Prestige Design */
+.bg-navy-gradient {
+  background: linear-gradient(135deg, #081826 0%, #0F2537 50%, #173752 100%);
+}
+
+.bg-navy-glass {
+  background: rgba(15, 37, 55, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #C59B27 50%, #997416 100%);
+}
+
+.border-gold-accent {
+  border-color: rgba(197, 155, 39, 0.35);
+}
+
+.shadow-academic {
+  box-shadow: 0 10px 30px -10px rgba(15, 37, 55, 0.08), 0 4px 12px -2px rgba(15, 37, 55, 0.04);
+}
+
+.shadow-academic-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shadow-academic-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(15, 37, 55, 0.15), 0 8px 16px -4px rgba(197, 155, 39, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #0F2537;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C59B27;
+}
