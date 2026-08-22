@@ -1,16 +1,22 @@
 import React from 'react';
 
-export const Badge = ({ children, variant = 'navy', className = '' }) => {
+export const Badge = ({
+  children,
+  variant = 'blue',
+  className = ''
+}) => {
   const variants = {
-    navy: "bg-[#0F2537] text-white border border-[#173752]",
-    gold: "bg-[#F4E8C1] text-[#997416] border border-[#C59B27]/40",
-    burgundy: "bg-[#800020]/10 text-[#800020] border border-[#800020]/20",
-    emerald: "bg-emerald-50 text-emerald-800 border border-emerald-200",
-    slate: "bg-slate-100 text-slate-700 border border-slate-200"
+    blue: "bg-[#EFF6FF] border border-[#BFDBFE] text-[#1E40AF] font-bold",
+    gold: "bg-[#EFF6FF] border border-[#BFDBFE] text-[#1E40AF] font-bold",
+    navy: "bg-[#F1F5F9] border border-[#CBD5E1] text-[#0F172A] font-semibold",
+    dark: "bg-[#0F172A] text-white font-medium",
+    green: "bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold"
   };
 
+  const selectedVariant = variants[variant] || variants.blue;
+
   return (
-    <span className={`inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold ${variants[variant]} ${className}`}>
+    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs transition-all ${selectedVariant} ${className}`}>
       {children}
     </span>
   );

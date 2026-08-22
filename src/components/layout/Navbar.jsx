@@ -45,15 +45,15 @@ export const Navbar = ({ onOpenEnquiry }) => {
   return (
     <header className={`sticky top-0 z-40 transition-all duration-300 ${
       scrolled 
-        ? 'bg-[#0F2537]/95 backdrop-blur-md shadow-xl border-b border-[#173752] py-2' 
-        : 'bg-[#0F2537] border-b border-[#173752] py-3.5'
+        ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200 py-2' 
+        : 'bg-white border-b border-slate-200 py-3'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4">
 
           {/* Brand Logo & Name */}
-          <Link to="/" className="flex items-center gap-3.5 group">
-            <div className="w-12 h-12 md:w-14 md:h-14 bg-white/95 rounded-lg p-1.5 shadow-md flex items-center justify-center border border-[#C59B27]/40 group-hover:scale-105 transition-transform">
+          <Link to="/" className="flex items-center gap-3 group shrink-0">
+            <div className="w-12 h-12 md:w-13 md:h-13 bg-white rounded-xl p-1 shadow-sm flex items-center justify-center border border-slate-200 group-hover:border-[#C59B27] group-hover:scale-105 transition-all">
               <img 
                 src={INSTITUTION_INFO.logo} 
                 alt="Keshav Madhav Group of Institutions Logo" 
@@ -61,68 +61,72 @@ export const Navbar = ({ onOpenEnquiry }) => {
               />
             </div>
             <div>
-              <span className="block text-lg md:text-xl font-bold font-serif-prestige text-white tracking-wide leading-tight group-hover:text-[#D4AF37] transition-colors">
+              <span className="block text-base md:text-lg font-bold font-serif-prestige text-[#0A1724] tracking-wide leading-tight">
                 KESHAV MADHAV
               </span>
-              <span className="block text-xs font-semibold text-[#D4AF37] tracking-wider uppercase">
-                Group of Institutions
+              <span className="block text-[11px] font-extrabold text-[#C59B27] tracking-wider uppercase">
+                GROUP OF INSTITUTIONS
               </span>
-              <span className="block text-[10px] text-slate-300">
+              <span className="block text-[10px] text-slate-500 font-medium">
                 Greater Noida | Estd. 2012
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
-            {navLinks.map((link) => (
-              <div key={link.name} className="relative group">
-                <Link
-                  to={link.path}
-                  className={`px-2.5 py-1.5 text-xs font-medium rounded-md transition-all flex items-center gap-1 ${
-                    location.pathname === link.path
-                      ? 'text-[#D4AF37] font-semibold bg-white/5'
-                      : 'text-slate-200 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  {link.name}
-                  {link.dropdown && <ChevronDown className="w-3 h-3 opacity-70 group-hover:rotate-180 transition-transform" />}
-                </Link>
+          {/* Desktop Navigation Links matching Reference Image */}
+          <nav className="hidden xl:flex items-center gap-1.5" aria-label="Main Navigation">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <div key={link.name} className="relative group">
+                  <Link
+                    to={link.path}
+                    className={`px-3 py-2 text-xs font-medium transition-all flex items-center gap-1 ${
+                      isActive
+                        ? 'text-[#0A1724] font-bold border-b-2 border-[#C59B27] pb-1'
+                        : 'text-slate-700 hover:text-[#0A1724] hover:bg-slate-50 rounded-md'
+                    }`}
+                  >
+                    {link.name}
+                    {link.dropdown && <ChevronDown className="w-3 h-3 opacity-70 group-hover:rotate-180 transition-transform" />}
+                  </Link>
 
-                {/* Dropdown Menu */}
-                {link.dropdown && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-[#081826] border border-[#173752] rounded-xl shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    {link.dropdown.map((subItem) => (
-                      <Link
-                        key={subItem.name}
-                        to={subItem.path}
-                        className="block px-4 py-2.5 text-xs text-slate-300 hover:text-[#D4AF37] hover:bg-white/5 transition-colors"
-                      >
-                        {subItem.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+                  {/* Dropdown Menu */}
+                  {link.dropdown && (
+                    <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-slate-200 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      {link.dropdown.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          to={subItem.path}
+                          className="block px-4 py-2.5 text-xs text-slate-700 hover:text-[#0A1724] hover:bg-slate-50 transition-colors"
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </nav>
 
-          {/* Right Action CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button variant="gold" size="sm" onClick={onOpenEnquiry} icon={GraduationCap}>
+          {/* Right Action CTA Button matching Reference Image */}
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
+            <Button variant="gold" size="sm" onClick={onOpenEnquiry} icon={GraduationCap} className="text-xs px-4 py-2 font-bold text-[#0A1724]">
               Enquire Now
             </Button>
           </div>
 
           {/* Mobile Menu Trigger Button */}
-          <div className="flex lg:hidden items-center gap-2">
-            <Button variant="gold" size="sm" onClick={onOpenEnquiry} className="text-xs px-2.5 py-1.5">
+          <div className="flex xl:hidden items-center gap-2">
+            <Button variant="gold" size="sm" onClick={onOpenEnquiry} className="text-xs px-2.5 py-1.5 text-[#0A1724]">
               Enquire
             </Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-200 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              className="p-2 text-slate-700 hover:text-[#0A1724] hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
               aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -133,29 +137,29 @@ export const Navbar = ({ onOpenEnquiry }) => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#081826] border-b border-[#173752] px-4 pt-3 pb-6 animate-fade-in">
+        <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 animate-fade-in shadow-xl">
           <nav className="space-y-1">
             {navLinks.map((link) => (
               <div key={link.name}>
                 <Link
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block px-4 py-2.5 text-sm font-medium rounded-lg ${
+                  className={`block px-4 py-2.5 text-sm font-semibold rounded-lg ${
                     location.pathname === link.path
-                      ? 'text-[#D4AF37] bg-white/10 font-bold'
-                      : 'text-slate-200 hover:bg-white/5'
+                      ? 'text-[#0A1724] bg-slate-100 border-l-4 border-[#C59B27]'
+                      : 'text-slate-700 hover:bg-slate-50'
                   }`}
                 >
                   {link.name}
                 </Link>
                 {link.dropdown && (
-                  <div className="pl-6 space-y-1 border-l border-[#173752] ml-4 my-1">
+                  <div className="pl-6 space-y-1 border-l border-slate-200 ml-4 my-1">
                     {link.dropdown.map((subItem) => (
                       <Link
                         key={subItem.name}
                         to={subItem.path}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="block px-3 py-2 text-xs text-slate-300 hover:text-[#D4AF37]"
+                        className="block px-3 py-2 text-xs text-slate-600 hover:text-[#0A1724]"
                       >
                         {subItem.name}
                       </Link>
@@ -166,8 +170,8 @@ export const Navbar = ({ onOpenEnquiry }) => {
             ))}
           </nav>
           
-          <div className="mt-4 pt-4 border-t border-[#173752] flex flex-col gap-2">
-            <Button variant="gold" size="md" className="w-full" onClick={() => { setMobileMenuOpen(false); onOpenEnquiry(); }}>
+          <div className="mt-4 pt-4 border-t border-slate-200 flex flex-col gap-2">
+            <Button variant="gold" size="md" className="w-full font-bold text-[#0A1724]" onClick={() => { setMobileMenuOpen(false); onOpenEnquiry(); }}>
               Admission Enquiry 2026-27
             </Button>
           </div>

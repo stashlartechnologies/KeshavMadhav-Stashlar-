@@ -1,43 +1,31 @@
 import React from 'react';
+import { Badge } from './Badge';
 
 export const SectionHeading = ({
   badge,
   title,
   subtitle,
-  align = 'center',
-  dark = false,
+  centered = true,
   className = ''
 }) => {
-  const alignClass = align === 'left' ? 'text-left' : align === 'right' ? 'text-right' : 'text-center mx-auto';
-  
   return (
-    <div className={`max-w-3xl mb-12 ${alignClass} ${className}`}>
+    <div className={`space-y-3 ${centered ? 'text-center max-w-3xl mx-auto' : 'text-left'} ${className}`}>
       {badge && (
-        <span className={`inline-flex items-center px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 ${
-          dark 
-            ? 'bg-[#C59B27]/20 text-[#D4AF37] border border-[#C59B27]/30' 
-            : 'bg-[#0F2537]/10 text-[#0F2537] border border-[#0F2537]/20'
-        }`}>
+        <Badge variant="blue" className="px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-widest">
           {badge}
-        </span>
+        </Badge>
       )}
       {title && (
-        <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold font-serif-prestige tracking-tight ${
-          dark ? 'text-white' : 'text-[#0F2537]'
-        }`}>
+        <h2 className="text-3xl md:text-4xl font-extrabold font-serif-prestige text-[#0F172A] tracking-tight leading-tight">
           {title}
         </h2>
       )}
-      <div className={`h-1 w-20 bg-gradient-to-r from-[#C59B27] to-[#997416] my-4 rounded-full ${
-        align === 'left' ? 'mr-auto' : align === 'right' ? 'ml-auto' : 'mx-auto'
-      }`} />
       {subtitle && (
-        <p className={`text-base md:text-lg leading-relaxed ${
-          dark ? 'text-slate-300' : 'text-slate-600'
-        }`}>
+        <p className="text-sm md:text-base text-slate-600 font-light leading-relaxed">
           {subtitle}
         </p>
       )}
+      <div className={`w-16 h-1 bg-gradient-to-r from-[#1D4ED8] to-[#3B82F6] rounded-full ${centered ? 'mx-auto' : ''}`}></div>
     </div>
   );
 };

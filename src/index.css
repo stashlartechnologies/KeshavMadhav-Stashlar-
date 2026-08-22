@@ -3,16 +3,17 @@
 
 @layer base {
   :root {
-    --color-navy-dark: #081826;
-    --color-navy-primary: #0F2537;
-    --color-navy-medium: #173752;
-    --color-gold-primary: #C59B27;
+    --color-hero-navy: #0A1724;
+    --color-surface-navy: #0F263B;
+    --color-gold: #C59B27;
+    --color-gold-bright: #E5B238;
+    --color-bg-light: #F8FAFC;
   }
 
   body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #FAFAFC;
-    color: #1E293B;
+    background-color: #F8FAFC;
+    color: #0F172A;
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
@@ -20,38 +21,36 @@
   h1, h2, h3, .font-serif-prestige {
     font-family: 'Playfair Display', Georgia, serif;
   }
+
+  /* Accessibility Focus Rings */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #0A1724, 0 0 0 4px #E5B238;
+    border-radius: 6px;
+  }
 }
 
-/* Custom Utilities for Academic Prestige Design */
-.bg-navy-gradient {
-  background: linear-gradient(135deg, #081826 0%, #0F2537 50%, #173752 100%);
+/* Background Radial Dot Grid Pattern from Reference Image */
+.bg-hero-pattern {
+  background-color: #0A1724;
+  background-image: radial-gradient(rgba(197, 155, 39, 0.18) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-.bg-navy-glass {
-  background: rgba(15, 37, 55, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* Micro Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.bg-gold-gradient {
-  background: linear-gradient(135deg, #D4AF37 0%, #C59B27 50%, #997416 100%);
-}
-
-.border-gold-accent {
-  border-color: rgba(197, 155, 39, 0.35);
-}
-
-.shadow-academic {
-  box-shadow: 0 10px 30px -10px rgba(15, 37, 55, 0.08), 0 4px 12px -2px rgba(15, 37, 55, 0.04);
-}
-
-.shadow-academic-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.shadow-academic-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -15px rgba(15, 37, 55, 0.15), 0 8px 16px -4px rgba(197, 155, 39, 0.1);
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Custom Scrollbar */
@@ -59,12 +58,13 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #0A1724;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0F2537;
+  background: #0F263B;
   border-radius: 4px;
+  border: 1px solid rgba(197, 155, 39, 0.3);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C59B27;
+  background: #E5B238;
 }

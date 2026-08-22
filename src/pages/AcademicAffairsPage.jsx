@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { SectionHeading } from '../components/common/SectionHeading';
 import { Card } from '../components/common/Card';
 import { Badge } from '../components/common/Badge';
 import { Button } from '../components/common/Button';
-import { FileText, ShieldCheck, Bell, CreditCard, Calendar, BookOpen, Download, Search, CheckCircle } from 'lucide-react';
+import { FileText, ShieldCheck, Bell, CreditCard, Calendar, BookOpen, Download, CheckCircle } from 'lucide-react';
 import { ACADEMIC_AFFAIRS_DATA } from '../data/kmgiData';
 
 export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
@@ -20,19 +19,18 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAFAFC] pb-20">
+    <div className="min-h-screen bg-[#FAFBFD] pb-20">
       
       {/* Header Banner */}
-      <section className="bg-navy-gradient text-white py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#173752_1px,transparent_1px)] [background-size:24px_24px] opacity-25"></div>
+      <section className="bg-hero-pattern-light text-[#0F172A] py-16 md:py-24 relative overflow-hidden border-b border-[#E2E8F0]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <Badge variant="gold" className="px-3.5 py-1 text-xs uppercase tracking-wider">
+          <Badge variant="blue" className="px-3.5 py-1 text-xs uppercase tracking-wider">
             Academic Operations Hub
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-extrabold font-serif-prestige tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold font-serif-prestige tracking-tight text-[#0F172A]">
             Academic Affairs & Resources
           </h1>
-          <p className="text-base text-slate-300 max-w-2xl mx-auto font-light">
+          <p className="text-base text-slate-600 max-w-2xl mx-auto font-light">
             Official portal for notices, council recognitions, fee rules, syllabus downloads, and examination archives.
           </p>
         </div>
@@ -43,7 +41,7 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Navigation Bar for Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12 bg-white p-2.5 rounded-2xl border border-slate-200 shadow-sm">
+          <div className="flex flex-wrap justify-center gap-2 mb-12 bg-white p-2.5 rounded-2xl border border-[#E2E8F0] shadow-sm">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -53,11 +51,11 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all cursor-pointer ${
                     isActive
-                      ? 'bg-[#0F2537] text-white shadow-md'
-                      : 'text-slate-700 hover:bg-slate-100 hover:text-[#0F2537]'
+                      ? 'bg-[#1D4ED8] text-white font-bold shadow-md'
+                      : 'text-slate-700 hover:bg-[#EFF6FF] hover:text-[#1D4ED8]'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#D4AF37]' : 'text-slate-500'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#1D4ED8]'}`} />
                   <span>{tab.name}</span>
                 </button>
               );
@@ -69,19 +67,19 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
             
             {/* 1. Terms & Conditions */}
             {activeTab === 'terms' && (
-              <Card className="p-8 space-y-6 bg-white border-2 border-slate-200">
-                <div className="border-b border-slate-100 pb-4">
-                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F2537]">
+              <Card className="p-8 space-y-6 bg-white border border-[#CBD5E1] shadow-xl">
+                <div className="border-b border-[#E2E8F0] pb-4">
+                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F172A]">
                     Terms, Regulations & Code of Conduct
                   </h3>
-                  <p className="text-xs text-slate-500 mt-1">Official guidelines for students enrolled at KMGI</p>
+                  <p className="text-xs text-slate-500 mt-1 font-light">Official guidelines for students enrolled at KMGI</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {ACADEMIC_AFFAIRS_DATA.terms.map((term, idx) => (
-                    <div key={idx} className="p-5 bg-[#FAFAFC] border border-slate-200 rounded-xl space-y-2">
-                      <h4 className="text-base font-bold font-serif-prestige text-[#0F2537] flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-[#C59B27]" />
+                    <div key={idx} className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl space-y-2">
+                      <h4 className="text-base font-bold font-serif-prestige text-[#0F172A] flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-[#1D4ED8]" />
                         {term.title}
                       </h4>
                       <p className="text-xs text-slate-600 leading-relaxed font-light">
@@ -95,22 +93,22 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
 
             {/* 2. Recognitions & Approvals */}
             {activeTab === 'recognition' && (
-              <Card className="p-8 space-y-6 bg-white border-2 border-slate-200">
-                <div className="border-b border-slate-100 pb-4">
-                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F2537]">
+              <Card className="p-8 space-y-6 bg-white border border-[#CBD5E1] shadow-xl">
+                <div className="border-b border-[#E2E8F0] pb-4">
+                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F172A]">
                     Council Recognitions & Affiliations
                   </h3>
-                  <p className="text-xs text-slate-500 mt-1">Official status with national and state regulatory bodies</p>
+                  <p className="text-xs text-slate-500 mt-1 font-light">Official status with national and state regulatory bodies</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {ACADEMIC_AFFAIRS_DATA.recognitions.map((rec, idx) => (
-                    <div key={idx} className="p-5 bg-[#FAFAFC] border border-slate-200 rounded-xl space-y-2">
+                    <div key={idx} className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl space-y-2">
                       <div className="flex items-center justify-between">
-                        <h4 className="text-base font-bold font-serif-prestige text-[#0F2537]">
+                        <h4 className="text-base font-bold font-serif-prestige text-[#0F172A]">
                           {rec.council}
                         </h4>
-                        <Badge variant="gold" className="text-[10px]">{rec.status}</Badge>
+                        <Badge variant="blue" className="text-[10px]">{rec.status}</Badge>
                       </div>
                       <p className="text-xs text-slate-600 leading-relaxed font-light">
                         {rec.detail}
@@ -123,25 +121,25 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
 
             {/* 3. Circulars & Notices */}
             {activeTab === 'circulars' && (
-              <Card className="p-8 space-y-6 bg-white border-2 border-slate-200">
-                <div className="border-b border-slate-100 pb-4">
-                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F2537]">
+              <Card className="p-8 space-y-6 bg-white border border-[#CBD5E1] shadow-xl">
+                <div className="border-b border-[#E2E8F0] pb-4">
+                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F172A]">
                     Live Circulars & Official Notices
                   </h3>
-                  <p className="text-xs text-slate-500 mt-1">Recent announcements for all academic streams</p>
+                  <p className="text-xs text-slate-500 mt-1 font-light">Recent announcements for all academic streams</p>
                 </div>
 
                 <div className="space-y-4">
                   {ACADEMIC_AFFAIRS_DATA.circulars.map((circ, idx) => (
-                    <div key={idx} className="p-4 bg-[#FAFAFC] border border-slate-200 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-[#0F2537] transition-colors">
+                    <div key={idx} className="p-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-[#1D4ED8]/40 transition-colors">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
-                          <span className="text-[10px] font-bold text-white bg-[#0F2537] px-2 py-0.5 rounded uppercase">
+                          <span className="text-[10px] font-bold text-white bg-[#1D4ED8] px-2 py-0.5 rounded uppercase">
                             {circ.category}
                           </span>
                           <span className="text-xs text-slate-500 font-semibold">{circ.date}</span>
                         </div>
-                        <h4 className="text-base font-bold text-slate-800 font-serif-prestige">
+                        <h4 className="text-base font-bold text-[#0F172A] font-serif-prestige">
                           {circ.title}
                         </h4>
                       </div>
@@ -156,20 +154,20 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
 
             {/* 4. Fees Structure */}
             {activeTab === 'fees' && (
-              <Card className="p-8 space-y-6 bg-white border-2 border-slate-200">
-                <div className="border-b border-slate-100 pb-4">
-                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F2537]">
+              <Card className="p-8 space-y-6 bg-white border border-[#CBD5E1] shadow-xl">
+                <div className="border-b border-[#E2E8F0] pb-4">
+                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F172A]">
                     Tuition Fees & Payment Guidelines
                   </h3>
-                  <p className="text-xs text-slate-600 mt-1 max-w-2xl">
+                  <p className="text-xs text-slate-600 mt-1 max-w-2xl font-light">
                     {ACADEMIC_AFFAIRS_DATA.feesInfo.note}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {ACADEMIC_AFFAIRS_DATA.feesInfo.breakdown.map((fee, idx) => (
-                    <div key={idx} className="p-5 bg-[#FAFAFC] border border-slate-200 rounded-xl space-y-2">
-                      <h4 className="text-base font-bold font-serif-prestige text-[#0F2537]">
+                    <div key={idx} className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl space-y-2">
+                      <h4 className="text-base font-bold font-serif-prestige text-[#0F172A]">
                         {fee.stream}
                       </h4>
                       <p className="text-xs text-slate-600 leading-relaxed font-light">
@@ -179,11 +177,11 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
                   ))}
                 </div>
 
-                <div className="p-4 bg-[#0F2537] text-white rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <p className="text-xs text-slate-300">
+                <div className="p-4 bg-[#F1F5F9] text-[#0F172A] rounded-xl border border-[#E2E8F0] flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <p className="text-xs text-slate-600 font-light">
                     Need fee installment details or scholarship guidance? Contact our admissions office.
                   </p>
-                  <Button variant="gold" size="sm" onClick={onOpenEnquiry} className="shrink-0">
+                  <Button variant="blue" size="sm" onClick={onOpenEnquiry} className="shrink-0 text-white font-bold">
                     Fee Structure Enquiry
                   </Button>
                 </div>
@@ -192,19 +190,19 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
 
             {/* 5. Exam Notifications */}
             {activeTab === 'exams' && (
-              <Card className="p-8 space-y-6 bg-white border-2 border-slate-200">
-                <div className="border-b border-slate-100 pb-4">
-                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F2537]">
+              <Card className="p-8 space-y-6 bg-white border border-[#CBD5E1] shadow-xl">
+                <div className="border-b border-[#E2E8F0] pb-4">
+                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F172A]">
                     Examination Schedules & Rules
                   </h3>
-                  <p className="text-xs text-slate-500 mt-1">Mid-term, semester, and university exam timetables</p>
+                  <p className="text-xs text-slate-500 mt-1 font-light">Mid-term, semester, and university exam timetables</p>
                 </div>
 
-                <div className="p-5 bg-[#FAFAFC] border border-slate-200 rounded-xl space-y-3">
-                  <h4 className="text-base font-bold font-serif-prestige text-[#0F2537]">
+                <div className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl space-y-3">
+                  <h4 className="text-base font-bold font-serif-prestige text-[#0F172A]">
                     End-Semester Examination Schedule 2026
                   </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed font-light">
                     Exams for CCSU Law, ABVMU B.Sc Nursing, and PCI Pharmacy courses are conducted as per respective university date-sheets. Admit cards are issued to students meeting 75% attendance criteria.
                   </p>
                   <Button variant="secondary" size="sm" className="text-xs">
@@ -216,26 +214,26 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
 
             {/* 6. Syllabus Downloads */}
             {activeTab === 'syllabus' && (
-              <Card className="p-8 space-y-6 bg-white border-2 border-slate-200">
-                <div className="border-b border-slate-100 pb-4">
-                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F2537]">
+              <Card className="p-8 space-y-6 bg-white border border-[#CBD5E1] shadow-xl">
+                <div className="border-b border-[#E2E8F0] pb-4">
+                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F172A]">
                     Course Syllabus Downloads
                   </h3>
-                  <p className="text-xs text-slate-500 mt-1">Official curriculum as per BCI, PCI, ABVMU, and CCSU norms</p>
+                  <p className="text-xs text-slate-500 mt-1 font-light">Official curriculum as per BCI, PCI, ABVMU, and CCSU norms</p>
                 </div>
 
                 <div className="space-y-3">
                   {ACADEMIC_AFFAIRS_DATA.syllabusList.map((syl, idx) => (
-                    <div key={idx} className="p-4 bg-[#FAFAFC] border border-slate-200 rounded-xl flex items-center justify-between gap-4 hover:border-[#0F2537] transition-colors">
+                    <div key={idx} className="p-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex items-center justify-between gap-4 hover:border-[#1D4ED8]/40 transition-colors">
                       <div>
-                        <span className="text-[10px] font-bold text-[#0F2537] bg-[#0F2537]/10 px-2 py-0.5 rounded uppercase">
+                        <span className="text-[10px] font-bold text-white bg-[#1D4ED8] px-2 py-0.5 rounded uppercase">
                           {syl.stream}
                         </span>
-                        <h4 className="text-sm font-bold text-slate-800 font-serif-prestige mt-1">
+                        <h4 className="text-sm font-bold text-[#0F172A] font-serif-prestige mt-1">
                           {syl.program}
                         </h4>
                       </div>
-                      <Button variant="outline" size="sm" className="text-xs shrink-0" icon={Download}>
+                      <Button variant="outlineBlue" size="sm" className="text-xs shrink-0" icon={Download}>
                         {syl.pdfName}
                       </Button>
                     </div>
@@ -246,22 +244,22 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
 
             {/* 7. Question Papers Archive */}
             {activeTab === 'papers' && (
-              <Card className="p-8 space-y-6 bg-white border-2 border-slate-200">
-                <div className="border-b border-slate-100 pb-4">
-                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F2537]">
+              <Card className="p-8 space-y-6 bg-white border border-[#CBD5E1] shadow-xl">
+                <div className="border-b border-[#E2E8F0] pb-4">
+                  <h3 className="text-2xl font-bold font-serif-prestige text-[#0F172A]">
                     Previous Year Question Papers Repository
                   </h3>
-                  <p className="text-xs text-slate-500 mt-1">Sample test papers and previous university exam question banks</p>
+                  <p className="text-xs text-slate-500 mt-1 font-light">Sample test papers and previous university exam question banks</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {ACADEMIC_AFFAIRS_DATA.questionPapers.map((qp, idx) => (
-                    <div key={idx} className="p-5 bg-[#FAFAFC] border border-slate-200 rounded-xl space-y-3">
+                    <div key={idx} className="p-5 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl space-y-3">
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-semibold text-slate-500">Session {qp.year}</span>
-                        <Badge variant="gold" className="text-[10px]">Exam Paper</Badge>
+                        <Badge variant="blue" className="text-[10px]">Exam Paper</Badge>
                       </div>
-                      <h4 className="text-base font-bold font-serif-prestige text-[#0F2537]">
+                      <h4 className="text-base font-bold font-serif-prestige text-[#0F172A]">
                         {qp.title}
                       </h4>
                       <Button variant="secondary" size="sm" className="w-full text-xs" icon={Download}>

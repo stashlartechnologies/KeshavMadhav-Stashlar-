@@ -94,23 +94,23 @@ export const LEADERSHIP = [
   },
   {
     id: "parul-sharma",
-    name: "Ms. Parul Sharma",
-    role: "Director of Institutional Development & Operations",
-    institution: "Keshav Madhav Group of Institutions",
+    name: "Mrs. Parul Sharma",
+    role: "Director of Pharmacy",
+    institution: "Keshav Madhav College of Pharmacy",
     image: null,
-    highlight: "Fostering an ecosystem of holistic growth, student welfare, and modern academic infrastructure.",
-    quote: "Operational efficiency and student-centric support systems form the backbone of educational excellence. At Keshav Madhav Group of Institutions, we ensure that every learner has access to state-of-the-art facilities, supportive faculty mentorship, and an inclusive campus culture that encourages innovation, discipline, and ethical conduct.",
-    invitation: "We welcome aspiring students to experience an environment engineered for personal growth, career preparedness, and societal contribution."
+    highlight: "Pharmacy is a profession of precision, ethical care, and scientific innovation.",
+    quote: "Operational efficiency and student-centric support systems form the backbone of pharmaceutical education. At Keshav Madhav College of Pharmacy, we ensure that every learner has access to state-of-the-art analytical labs, supportive faculty mentorship, and a research-driven environment.",
+    invitation: "We welcome aspiring pharmaceutical professionals to experience an environment engineered for scientific growth and career success."
   },
   {
     id: "anshu-sharma",
-    name: "Dr. Anshu Sharma",
-    role: "Director of Academic Affairs & Quality Assurance",
-    institution: "Keshav Madhav Group of Institutions",
+    name: "Mr. Anshu Sharma",
+    role: "Director of Nursing",
+    institution: "Keshav Madhav Institute of Nursing",
     image: null,
-    highlight: "Upholding continuous academic quality, outcome-based education, and faculty excellence.",
-    quote: "Quality education relies on rigorous curriculum delivery, continuous pedagogical advancement, and strict compliance with national accrediting bodies. Our academic frameworks across Law, Nursing, Pharmacy, and Vocational Education are continuously updated to align with modern industry requirements and university standards.",
-    invitation: "Join us in our commitment to academic precision, research-oriented learning, and ethical professional practice."
+    highlight: "Nursing is not just a profession—it is a calling of compassionate care and clinical excellence.",
+    quote: "Quality healthcare relies on rigorous clinical training, empathetic patient management, and strict compliance with medical standards. Our nursing frameworks at Keshav Madhav Institute of Nursing prepare caregivers for real-world hospital challenges.",
+    invitation: "Join us in our commitment to clinical precision, compassionate care, and ethical professional practice."
   }
 ];
 
