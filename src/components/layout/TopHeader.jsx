@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { INSTITUTION_INFO } from '../../data/kmgiData';
 
-export const TopHeader = ({ onOpenEnquiry }) => {
+export const TopHeader = () => {
   return (
     <div className="bg-[#06101B] text-slate-300 text-xs py-2 border-b border-[#0F263B] hidden md:block">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">

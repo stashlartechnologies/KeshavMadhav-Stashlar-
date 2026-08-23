@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Award, CheckCircle } from 'lucide-react';
 import { INSTITUTION_INFO } from '../../data/kmgiData';
 
-export const Footer = ({ onOpenEnquiry }) => {
+export const Footer = () => {
   return (
     <footer className="bg-[#0F172A] text-slate-300 pt-16 pb-8 border-t-4 border-[#1D4ED8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,16 +105,7 @@ export const Footer = ({ onOpenEnquiry }) => {
             <div className="flex items-center gap-2.5 text-xs text-slate-300 font-light">
               <Mail className="w-4 h-4 text-[#3B82F6] shrink-0" />
               <span>{INSTITUTION_INFO.admissionsEmail}</span>
-            </div>
-
-            <div className="pt-2">
-              <button
-                onClick={onOpenEnquiry}
-                className="w-full text-xs font-bold text-white bg-[#1D4ED8] hover:bg-[#1E40AF] py-2.5 px-4 rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer"
-              >
-                Request Prospectus 2026-27
-              </button>
-            </div>
+          </div>
           </div>
 
         </div>

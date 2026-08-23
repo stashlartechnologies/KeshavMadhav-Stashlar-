@@ -1,9 +1,8 @@
 import React from 'react';
-import { Button } from '../common/Button';
-import { HeartPulse, Hospital, CheckCircle2, GraduationCap } from 'lucide-react';
+import { HeartPulse, Hospital, CheckCircle2 } from 'lucide-react';
 import { NURSING_HIGHLIGHTS } from '../../data/kmgiData';
 
-export const NursingHighlights = ({ onOpenEnquiry }) => {
+export const NursingHighlights = () => {
   return (
     <section className="py-20 bg-[#FAFBFD] border-b border-[#E2E8F0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,12 +38,6 @@ export const NursingHighlights = ({ onOpenEnquiry }) => {
                     <span>{pt}</span>
                   </div>
                 ))}
-              </div>
-
-              <div className="pt-4 flex flex-wrap items-center gap-4">
-                <Button variant="blue" size="lg" onClick={onOpenEnquiry} icon={GraduationCap} className="text-white font-bold">
-                  Apply for Nursing Admissions
-                </Button>
               </div>
 
             </div>

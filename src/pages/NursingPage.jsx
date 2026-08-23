@@ -2,11 +2,10 @@ import React from 'react';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { Card } from '../components/common/Card';
 import { Badge } from '../components/common/Badge';
-import { Button } from '../components/common/Button';
-import { HeartPulse, Hospital, FlaskConical, Activity, Award, UserCheck, ShieldCheck, CheckCircle2, GraduationCap, Stethoscope } from 'lucide-react';
+import { HeartPulse, Hospital, FlaskConical, Activity, Award, UserCheck, ShieldCheck, CheckCircle2, Stethoscope } from 'lucide-react';
 import { NURSING_PORTAL_DATA } from '../data/kmgiData';
 
-export const NursingPage = ({ onOpenEnquiry }) => {
+export const NursingPage = () => {
   return (
     <div className="min-h-screen bg-[#FAFBFD] pb-20">
       
@@ -101,10 +100,6 @@ export const NursingPage = ({ onOpenEnquiry }) => {
                     </div>
                   ))}
                 </div>
-
-                <Button variant="blue" size="md" className="w-full text-white font-bold" onClick={onOpenEnquiry} icon={GraduationCap}>
-                  Apply for Nursing Course
-                </Button>
               </Card>
             </div>
 

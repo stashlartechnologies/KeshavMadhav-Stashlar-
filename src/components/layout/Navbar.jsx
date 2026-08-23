@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, GraduationCap } from 'lucide-react';
-import { Button } from '../common/Button';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { INSTITUTION_INFO } from '../../data/kmgiData';
 
-export const Navbar = ({ onOpenEnquiry }) => {
+export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -73,7 +72,7 @@ export const Navbar = ({ onOpenEnquiry }) => {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links matching Reference Image */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden xl:flex items-center gap-1.5" aria-label="Main Navigation">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
@@ -110,18 +109,8 @@ export const Navbar = ({ onOpenEnquiry }) => {
             })}
           </nav>
 
-          {/* Right Action CTA Button matching Reference Image */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <Button variant="gold" size="sm" onClick={onOpenEnquiry} icon={GraduationCap} className="text-xs px-4 py-2 font-bold text-[#0A1724]">
-              Enquire Now
-            </Button>
-          </div>
-
           {/* Mobile Menu Trigger Button */}
           <div className="flex xl:hidden items-center gap-2">
-            <Button variant="gold" size="sm" onClick={onOpenEnquiry} className="text-xs px-2.5 py-1.5 text-[#0A1724]">
-              Enquire
-            </Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-slate-700 hover:text-[#0A1724] hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
@@ -169,12 +158,6 @@ export const Navbar = ({ onOpenEnquiry }) => {
               </div>
             ))}
           </nav>
-          
-          <div className="mt-4 pt-4 border-t border-slate-200 flex flex-col gap-2">
-            <Button variant="gold" size="md" className="w-full font-bold text-[#0A1724]" onClick={() => { setMobileMenuOpen(false); onOpenEnquiry(); }}>
-              Admission Enquiry 2026-27
-            </Button>
-          </div>
         </div>
       )}
     </header>

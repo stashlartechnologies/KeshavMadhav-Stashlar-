@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '../common/SectionHeading';
 import { Card } from '../common/Card';
-import { Button } from '../common/Button';
 import { Badge } from '../common/Badge';
-import { Scale, HeartPulse, Pill, Wrench, CheckCircle, Clock, GraduationCap } from 'lucide-react';
+import { Scale, HeartPulse, Pill, Wrench, CheckCircle, Clock } from 'lucide-react';
 import { PROGRAMMES } from '../../data/kmgiData';
 
-export const ProgrammesSection = ({ onOpenEnquiry }) => {
+export const ProgrammesSection = () => {
   const [activeTab, setActiveTab] = useState('law');
 
   const icons = {
@@ -64,9 +63,6 @@ export const ProgrammesSection = ({ onOpenEnquiry }) => {
                     {prog.description}
                   </p>
                 </div>
-                <Button variant="blue" size="md" onClick={onOpenEnquiry} icon={GraduationCap} className="text-white font-bold">
-                  Apply for Admission
-                </Button>
               </div>
 
               {/* Courses Grid */}

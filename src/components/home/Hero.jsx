@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from '../common/Button';
-import { Award, BookOpen, ArrowRight, Calendar } from 'lucide-react';
+import { Award, BookOpen, Calendar } from 'lucide-react';
 import { INSTITUTION_INFO } from '../../data/kmgiData';
 
-export const Hero = ({ onOpenEnquiry }) => {
+export const Hero = () => {
   return (
     <section className="relative bg-[#0A1724] bg-hero-pattern py-14 md:py-20 overflow-hidden border-b border-[#132F48]">
       
@@ -37,26 +37,14 @@ export const Hero = ({ onOpenEnquiry }) => {
               Established in <strong className="text-white font-bold">2012</strong> under Keshav Madhav Shikshan Sansthan (Trust). Offering premier education in <strong className="text-[#E5B238] font-bold">Law, Nursing, Pharmacy & Vocational Studies</strong> with national council approvals and state university affiliations.
             </p>
 
-            {/* Action Buttons matching reference image */}
+            {/* Action Buttons */}
             <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Button 
-                variant="gold" 
-                size="lg" 
-                onClick={onOpenEnquiry}
-                className="text-sm font-bold text-[#0A1724] px-6 py-3.5 shadow-lg flex items-center gap-2 bg-[#E5B238] hover:bg-[#D4AF37]"
-              >
-                <span>Admission Enquiry 2026–27</span>
-                <span className="w-6 h-6 rounded-full bg-[#0A1724] text-white flex items-center justify-center">
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-              </Button>
-              
               <a href="#programmes">
                 <Button 
-                  variant="outlineGold" 
+                  variant="gold" 
                   size="lg"
                   icon={BookOpen}
-                  className="text-sm font-bold px-6 py-3.5 text-white border-2 border-[#C59B27]"
+                  className="text-sm font-bold text-[#0A1724] px-6 py-3.5 shadow-lg bg-[#E5B238] hover:bg-[#D4AF37]"
                 >
                   Explore Programmes
                 </Button>

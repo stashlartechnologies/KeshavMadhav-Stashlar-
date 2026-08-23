@@ -2,11 +2,10 @@ import React from 'react';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { Card } from '../components/common/Card';
 import { Badge } from '../components/common/Badge';
-import { Button } from '../components/common/Button';
-import { Eye, Target, Compass, Award, CheckCircle2, GraduationCap } from 'lucide-react';
+import { Eye, Target, Compass, Award, CheckCircle2 } from 'lucide-react';
 import { VISION, AIM, MISSION_POINTS, CORE_VALUES } from '../data/kmgiData';
 
-export const AboutPage = ({ onOpenEnquiry }) => {
+export const AboutPage = () => {
   return (
     <div className="min-h-screen bg-[#FAFBFD] pb-20">
       
@@ -50,12 +49,6 @@ export const AboutPage = ({ onOpenEnquiry }) => {
               <p className="text-slate-600 font-light">
                 With programmes in <strong className="text-[#0F172A]">Law, Nursing, Pharmacy, and Vocational Education</strong>, we provide a dynamic learning environment where knowledge is complemented by hands-on experience, industry exposure, and ethical leadership.
               </p>
-
-              <div className="pt-2">
-                <Button variant="blue" size="md" onClick={onOpenEnquiry} icon={GraduationCap} className="text-white font-bold">
-                  Enquire for Admissions 2026-27
-                </Button>
-              </div>
             </div>
 
             {/* Quality & Accreditation Card */}

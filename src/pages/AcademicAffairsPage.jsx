@@ -3,9 +3,9 @@ import { Card } from '../components/common/Card';
 import { Badge } from '../components/common/Badge';
 import { Button } from '../components/common/Button';
 import { FileText, ShieldCheck, Bell, CreditCard, Calendar, BookOpen, Download, CheckCircle } from 'lucide-react';
-import { ACADEMIC_AFFAIRS_DATA } from '../data/kmgiData';
+import { ACADEMIC_AFFAIRS_DATA, INSTITUTION_INFO } from '../data/kmgiData';
 
-export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
+export const AcademicAffairsPage = () => {
   const [activeTab, setActiveTab] = useState('circulars');
 
   const tabs = [
@@ -177,13 +177,10 @@ export const AcademicAffairsPage = ({ onOpenEnquiry }) => {
                   ))}
                 </div>
 
-                <div className="p-4 bg-[#F1F5F9] text-[#0F172A] rounded-xl border border-[#E2E8F0] flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="p-4 bg-[#F1F5F9] text-[#0F172A] rounded-xl border border-[#E2E8F0]">
                   <p className="text-xs text-slate-600 font-light">
-                    Need fee installment details or scholarship guidance? Contact our admissions office.
+                    Need fee installment details or scholarship guidance? Contact our admissions office at <strong className="text-[#0F172A] font-semibold">{INSTITUTION_INFO.admissionsEmail}</strong> or helpline <strong className="text-[#0F172A] font-semibold">{INSTITUTION_INFO.phone}</strong>.
                   </p>
-                  <Button variant="blue" size="sm" onClick={onOpenEnquiry} className="shrink-0 text-white font-bold">
-                    Fee Structure Enquiry
-                  </Button>
                 </div>
               </Card>
             )}

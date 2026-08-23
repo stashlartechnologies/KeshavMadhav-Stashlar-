@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Card } from '../components/common/Card';
-import { Button } from '../components/common/Button';
 import { Badge } from '../components/common/Badge';
-import { Scale, HeartPulse, Pill, Wrench, Clock, CheckCircle, GraduationCap } from 'lucide-react';
+import { Scale, HeartPulse, Pill, Wrench, Clock, CheckCircle } from 'lucide-react';
 import { PROGRAMMES } from '../data/kmgiData';
 
-export const AcademicsPage = ({ onOpenEnquiry }) => {
+export const AcademicsPage = () => {
   const [selectedFilter, setSelectedFilter] = useState('all');
 
   const icons = {
@@ -92,10 +91,6 @@ export const AcademicsPage = ({ onOpenEnquiry }) => {
                         {prog.description}
                       </p>
                     </div>
-
-                    <Button variant="blue" size="sm" onClick={onOpenEnquiry} icon={GraduationCap} className="text-white font-bold">
-                      Apply for Admission
-                    </Button>
                   </div>
 
                   {/* Course Cards Grid */}

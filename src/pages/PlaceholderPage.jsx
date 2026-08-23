@@ -2,10 +2,10 @@ import React from 'react';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
-import { ArrowLeft, GraduationCap } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export const PlaceholderPage = ({ title, subtitle, onOpenEnquiry }) => {
+export const PlaceholderPage = ({ title, subtitle }) => {
   return (
     <div className="py-20 bg-[#FAFAFC] min-h-[60vh]">
       <div className="max-w-4xl mx-auto px-4 text-center">
@@ -27,9 +27,6 @@ export const PlaceholderPage = ({ title, subtitle, onOpenEnquiry }) => {
                 Return to Homepage
               </Button>
             </Link>
-            <Button variant="gold" onClick={onOpenEnquiry} icon={GraduationCap}>
-              Submit Admission Enquiry
-            </Button>
           </div>
         </Card>
 

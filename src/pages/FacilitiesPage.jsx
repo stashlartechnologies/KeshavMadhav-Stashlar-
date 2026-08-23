@@ -5,7 +5,7 @@ import { Badge } from '../components/common/Badge';
 import { FlaskConical, CheckCircle2 } from 'lucide-react';
 import { CAMPUS_FACILITIES } from '../data/kmgiData';
 
-export const FacilitiesPage = ({ onOpenEnquiry }) => {
+export const FacilitiesPage = () => {
   return (
     <div className="min-h-screen bg-[#FAFBFD] pb-20">
       
@@ -77,12 +77,6 @@ export const FacilitiesPage = ({ onOpenEnquiry }) => {
                       <CheckCircle2 className="w-4 h-4 text-[#1D4ED8]" />
                       KMGI Greater Noida Campus
                     </span>
-                    <button
-                      onClick={onOpenEnquiry}
-                      className="text-xs font-bold text-[#1D4ED8] hover:text-[#1E40AF] transition-colors cursor-pointer"
-                    >
-                      Enquire Facilities →
-                    </button>
                   </div>
                 </div>
 

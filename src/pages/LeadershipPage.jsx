@@ -4,7 +4,7 @@ import { Badge } from '../components/common/Badge';
 import { Quote, UserCheck } from 'lucide-react';
 import { LEADERSHIP } from '../data/kmgiData';
 
-export const LeadershipPage = ({ onOpenEnquiry }) => {
+export const LeadershipPage = () => {
   return (
     <div className="min-h-screen bg-[#FAFBFD] pb-20">
       
